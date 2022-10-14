@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Sqwack">
+      <UniqueIdentifier>{CFECBAD1-BB8E-E5A7-A449-F9FB908A6CF8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sqwack\Core">
+      <UniqueIdentifier>{876AC35D-F31F-3C53-7C14-362AE8C83257}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Sqwack\src\Sqwack.h" />
+    <ClInclude Include="Sqwack\src\Sqwack\Core\App.h">
+      <Filter>Sqwack\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Sqwack\src\Sqwack\Core\Core.h">
+      <Filter>Sqwack\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Sqwack\src\Sqwack\Core\WindowsUtils.h">
+      <Filter>Sqwack\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Sqwack\src\Sqwack\Core\WindowsWindow.h">
+      <Filter>Sqwack\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Sqwack\src\pch.h" />
+    <ClInclude Include="Sqwack\src\Sqwack\Core\EntryPoint.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Sqwack\src\Sqwack\Core\App.cpp">
+      <Filter>Sqwack\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Sqwack\src\Sqwack\Core\WindowsWindow.cpp">
+      <Filter>Sqwack\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Sqwack\src\pch.cpp" />
+  </ItemGroup>
+</Project>
