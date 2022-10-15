@@ -134,27 +134,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Sqwack_Engine\Sqwack_Engine.vcxproj">
-      <Project>{A4DCC54F-109D-4186-D9D7-8A0345578662}</Project>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="Sandbox.rc" />
+    <ClCompile Include="src\Sandbox\SandboxApp.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\Engine_Icon.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Sandbox.aps" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\Sandbox\SandboxApp.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
+    <ProjectReference Include="..\Sqwack_Engine\Sqwack_Engine.vcxproj">
+      <Project>{A4DCC54F-109D-4186-D9D7-8A0345578662}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

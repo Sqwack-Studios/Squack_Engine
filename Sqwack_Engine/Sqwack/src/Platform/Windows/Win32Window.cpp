@@ -2,7 +2,7 @@
 / Sqwack Studios, 2022															 /
 /===============================================================================*/
 //==============================================================================//
-// Name				: WindowsWindow.cpp										
+// Name				: Win32Window.cpp										
 // Author			: Dani										 
 // Version			:														     
 // Creation time	: 07/10/2022 18:01:40													 
@@ -11,18 +11,18 @@
 #include "pch.h"
 
 
-#ifndef _Sqwack_Engine_WindowsWindow_CPP_
-#define _Sqwack_Engine_WindowsWindow_CPP_
+#ifndef _Sqwack_Engine_Win32Window_CPP_
+#define _Sqwack_Engine_Win32Window_CPP_
 
 
 #pragma once
-#include "WindowsWindow.h"
+#include "Win32Window.h"
 
 
 namespace Sqwack {
 
 
-	WindowsWindow::WindowsWindow(const UINT16& IDSClassName, const UINT16& IDSWindowTitle, const UINT16& IDIcon, const UINT16& width, const UINT16& height):
+	Win32Window::Win32Window(const UINT16& IDSClassName, const UINT16& IDSWindowTitle, const UINT16& IDIcon, const UINT16& width, const UINT16& height):
 		m_WindowWidth(width),
 		m_WindowHeight(height),
 		m_optr_Window(nullptr)
@@ -31,12 +31,12 @@ namespace Sqwack {
 		LoadString(HInstance(), IDSClassName, m_WindowClass, MAX_NAME_STRING);
 		m_hIcon = LoadIcon(HInstance(), MAKEINTRESOURCE(IDIcon));
 	}
-	WindowsWindow::~WindowsWindow()
+	Win32Window::~Win32Window()
 	{
 	}
 
 
-	WindowsWindow* WindowsWindow::SpawnWindow()
+	Win32Window* Win32Window::SpawnWindow()
 	{
 		if (m_optr_Window)
 		{
@@ -47,7 +47,7 @@ namespace Sqwack {
 		return nullptr;
 	}
 
-	LRESULT CALLBACK WindowsWindow::WindowProcess(HWND hWnd, UINT message, WPARAM wparam, LPARAM lparam)
+	LRESULT CALLBACK Win32Window::WindowProcess(HWND hWnd, UINT message, WPARAM wparam, LPARAM lparam)
 	{
 		switch (message)
 		{
@@ -62,7 +62,7 @@ namespace Sqwack {
 		return DefWindowProc(hWnd, message, wparam, lparam);
 	}
 
-	void WindowsWindow::CreateWindowClass()
+	void Win32Window::CreateWindowClass()
 	{
 		WNDCLASSEX wcex;
 
@@ -88,7 +88,7 @@ namespace Sqwack {
 		RegisterClassEx(&wcex);
 	}
 
-	void WindowsWindow::ProcessMessage(MSG& msg)
+	void Win32Window::ProcessMessage(MSG& msg)
 	{
 		if (PeekMessage(&msg, 0, 0, 0, PM_REMOVE))
 		{
@@ -101,7 +101,7 @@ namespace Sqwack {
 
 
 
-	bool WindowsWindow::InitializeWindow()
+	bool Win32Window::InitializeWindow()
 	{
 
 		CreateWindowClass();
@@ -137,5 +137,5 @@ namespace Sqwack {
 
 
 
-#endif // !_Sqwack_Engine_WindowsWindow_CPP_
+#endif // !_Sqwack_Engine_Win32Window_CPP_
 

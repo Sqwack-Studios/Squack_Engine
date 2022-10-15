@@ -2,42 +2,24 @@
 / Sqwack Studios, 2022															 /
 /===============================================================================*/
 //==============================================================================//
-// Name				: pch.h											 
+// Name				: Renderer.h											 
 // Author			: Dani										
 // Version			:														     
-// Creation time	: 07/10/2022 17:39:49													 
+// Creation time	: 15/10/2022 14:23:31													 
 //==============================================================================//
 
-#ifndef _Sqwack_Engine_pch_H_
-#define _Sqwack_Engine_pch_H_
-
-
-
-
-
-
+#ifndef _Sqwack_Engine_Renderer_H_
+#define _Sqwack_Engine_Renderer_H_
 
 #pragma once
 
-#include <iostream>
-#include <memory>
-#include <algorithm>
-#include <string>
-#include <vector>
-#include <functional>
+class Renderer
+{
+private:
 
-#include "Sqwack/Core/Core.h"
+protected:
 
-
-
-
-#include "Platform/Windows/Win32Headers.h"
-
-
-
-
-
-
-
-#endif // !_Sqwack_Engine_pch_H_
+public:
+};
+#endif // !_Sqwack_Engine_Renderer_H_
 

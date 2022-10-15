@@ -2,42 +2,25 @@
 / Sqwack Studios, 2022															 /
 /===============================================================================*/
 //==============================================================================//
-// Name				: pch.h											 
+// Name				: Win32Utils.h											 
 // Author			: Dani										
 // Version			:														     
-// Creation time	: 07/10/2022 17:39:49													 
+// Creation time	: 07/10/2022 23:06:39													 
 //==============================================================================//
 
-#ifndef _Sqwack_Engine_pch_H_
-#define _Sqwack_Engine_pch_H_
+#ifndef _Sqwack_Engine_Win32Utils_H_
+#define _Sqwack_Engine_Win32Utils_H_
 
 
 
+#define HInstance() GetModuleHandle(NULL)
 
-
+#define MAX_NAME_STRING 256
 
 
 #pragma once
 
-#include <iostream>
-#include <memory>
-#include <algorithm>
-#include <string>
-#include <vector>
-#include <functional>
-
-#include "Sqwack/Core/Core.h"
 
 
-
-
-#include "Platform/Windows/Win32Headers.h"
-
-
-
-
-
-
-
-#endif // !_Sqwack_Engine_pch_H_
+#endif // !_Sqwack-Core_Win32Utils_H_
 

@@ -12,8 +12,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 project "Sqwack_Engine"
 	location "Sqwack_Engine"
-	kind "SharedLib"
+	kind "StaticLib"
 	language "C++"
+	cppdialect "C++17"
+	staticruntime("on")
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -21,6 +23,11 @@ project "Sqwack_Engine"
 	pchheader "pch.h"
 	pchsource "Sqwack_Engine/Sqwack/src/pch.cpp"
 
+	links
+	{
+		"D3d12",
+		"DXGI"
+	}
 	
 	files
 	{
@@ -37,7 +44,7 @@ project "Sqwack_Engine"
 	}
 
 	filter "system:windows"
-		cppdialect "C++17"
+		
 		staticruntime "On"
 		systemversion "latest"
 
@@ -48,22 +55,18 @@ project "Sqwack_Engine"
 			"_WINDLL"
 		}
 
-		postbuildcommands
-		{
-			("{Copy} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
-		}
 
 	filter "configurations:Debug"
 		defines "SQWACK_DEBUG"
-		symbols "On"
+		symbols "on"
 
 	filter "configurations:Release"
 		defines "SQWACK_Release"
-		optimize "On"
+		optimize "on"
 
 	filter "configurations:Dist"
 		defines "SQWACK_Dist"
-		optimize "On"
+		optimize "on"
 
 
 
@@ -71,6 +74,7 @@ project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
+	cppdialect "C++17"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -94,8 +98,8 @@ project "Sandbox"
 	}
 
 		filter "system:windows"
-		cppdialect "C++17"
-		staticruntime "On"
+
+		staticruntime "on"
 		systemversion "latest"
 
 		defines

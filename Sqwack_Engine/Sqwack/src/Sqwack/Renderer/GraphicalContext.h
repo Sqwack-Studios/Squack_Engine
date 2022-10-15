@@ -2,23 +2,24 @@
 / Sqwack Studios, 2022															 /
 /===============================================================================*/
 //==============================================================================//
-// Name				: WindowsUtils.h											 
+// Name				: GraphicalContext.h											 
 // Author			: Dani										
 // Version			:														     
-// Creation time	: 07/10/2022 23:06:39													 
+// Creation time	: 15/10/2022 14:26:15													 
 //==============================================================================//
 
-#ifndef _Sqwack_Engine_WindowsUtils_H_
-#define _Sqwack_Engine_WindowsUtils_H_
-
-#define WIN32_LEAN_AND_MEAN
-#define HInstance() GetModuleHandle(NULL)
-#define MAX_NAME_STRING 256
-
+#ifndef _Sqwack_Engine_GraphicalContext_H_
+#define _Sqwack_Engine_GraphicalContext_H_
 
 #pragma once
-#include <Windows.h>
 
+class GraphicalContext
+{
+private:
 
-#endif // !_Sqwack-Core_WindowsUtils_H_
+protected:
+
+public:
+};
+#endif // !_Sqwack_Engine_GraphicalContext_H_
 

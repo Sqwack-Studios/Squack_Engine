@@ -4,23 +4,16 @@
     <Filter Include="src">
       <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\SandboxWindow">
-      <UniqueIdentifier>{C3C343FE-2FDA-4194-7851-CDB5E4A6121C}</UniqueIdentifier>
+    <Filter Include="src\Sandbox">
+      <UniqueIdentifier>{0BC25EEC-7777-D7E1-006C-D1B86C20CEE5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="Sandbox.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="..\..\..\..\Engine_Icon.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Sandbox.aps" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\Sandbox\SandboxApp.cpp" />
+    <ClCompile Include="src\Sandbox\SandboxApp.cpp">
+      <Filter>src\Sandbox</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

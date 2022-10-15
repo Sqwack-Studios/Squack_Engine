@@ -10,10 +10,14 @@
 
 
 #ifdef SQWACK_PLATFORM_WINDOWS
-	#ifdef SQWACK_BUILD_DLL
-		#define SQWACK_API __declspec(dllexport)
+	#ifdef SQWACK_DYNAMIC_LINK
+		#ifdef SQWACK_BUILD_DLL
+			#define SQWACK_API __declspec(dllexport)
+		#else
+			#define SQWACK_API __declspec(dllimport)
+		#endif
 	#else
-		#define SQWACK_API __declspec(dllimport)
+		#define SQWACK_API
 	#endif
 #else
 	#error SQWACK only supports Windows so far!
@@ -21,10 +25,10 @@
 
 
 
-#include "pch.h"
-#include <string>
+
+
 #include <stdint.h>
-#include "App.h"
+
 
 
 

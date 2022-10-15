@@ -23,7 +23,7 @@
 //CORE
 #include "Sqwack/Core/Core.h"
 #include "Sqwack/Core/App.h"
-#include "Sqwack/Core/WindowsWindow.h"
+#include "Sqwack/Core/Window.h"
 
 
 

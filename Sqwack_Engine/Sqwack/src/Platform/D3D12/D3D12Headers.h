@@ -2,42 +2,21 @@
 / Sqwack Studios, 2022															 /
 /===============================================================================*/
 //==============================================================================//
-// Name				: pch.h											 
+// Name				: D3D12Headers.h											 
 // Author			: Dani										
 // Version			:														     
-// Creation time	: 07/10/2022 17:39:49													 
+// Creation time	: 15/10/2022 14:30:11													 
 //==============================================================================//
 
-#ifndef _Sqwack_Engine_pch_H_
-#define _Sqwack_Engine_pch_H_
-
-
-
-
-
-
+#ifndef _Sqwack_Engine_D3D12Headers_H_
+#define _Sqwack_Engine_D3D12Headers_H_
 
 #pragma once
+#include <d3d12.h>
+#include "Sqwack/vendor/DirectX12/d3dx12.h"
+#include <dxgi1_6.h>
+#include <d3dcompiler.h>
+#include <DirectXMath.h>
 
-#include <iostream>
-#include <memory>
-#include <algorithm>
-#include <string>
-#include <vector>
-#include <functional>
-
-#include "Sqwack/Core/Core.h"
-
-
-
-
-#include "Platform/Windows/Win32Headers.h"
-
-
-
-
-
-
-
-#endif // !_Sqwack_Engine_pch_H_
+#endif // !_Sqwack_Engine_D3D12Headers_H_
 

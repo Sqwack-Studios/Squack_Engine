@@ -2,37 +2,34 @@
 / Sqwack Studios, 2022															 /
 /===============================================================================*/
 //==============================================================================//
-// Name				: WindowsWindow.h											 
+// Name				: Win32Window.h											 
 // Author			: Dani										
 // Version			:														     
 // Creation time	: 07/10/2022 17:15:00													 
 //==============================================================================//
 
-#ifndef _Sqwack_Engine_WindowsWindow_H_
-#define _Sqwack_Engine_WindowsWindow_H_
+#ifndef _Sqwack_Engine_Win32Window_H_
+#define _Sqwack_Engine_Win32Window_H_
 
 #pragma once
 
 
-#include "WindowsUtils.h"
+#include "Win32Utils.h"
+#include "Sqwack/Core/Window.h"
 
 
-
-
-#define HInstance() GetModuleHandle(NULL)
-#define MAX_NAME_STRING 256
 
 namespace Sqwack {
 
-	class SQWACK_API WindowsWindow
+	class SQWACK_API Win32Window: public Window
 
 	{
 	public:
 
-		WindowsWindow(const UINT16& IDSClassName, const UINT16& IDSWindowTitle, const UINT16& IDIcon, const UINT16& width, const UINT16& height);
-		virtual ~WindowsWindow();
+		Win32Window(const UINT16& IDSClassName, const UINT16& IDSWindowTitle, const UINT16& IDIcon, const UINT16& width, const UINT16& height);
+		virtual ~Win32Window();
 
-		virtual WindowsWindow* SpawnWindow();
+		virtual Win32Window* SpawnWindow();
 		bool InitializeWindow();
 		
 		void ProcessMessage(MSG& msg);
@@ -62,5 +59,5 @@ namespace Sqwack {
 	};	
 
 }
-#endif // !_Sqwack_Engine_WindowsWindow_H_
+#endif // !_Sqwack_Engine_Win32Window_H_
 
