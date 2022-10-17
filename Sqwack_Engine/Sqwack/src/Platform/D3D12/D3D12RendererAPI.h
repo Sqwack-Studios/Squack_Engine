@@ -12,15 +12,17 @@
 #define _Sqwack_Engine_D3D12RendererAPI_H_
 
 #pragma once
-#include "Sqwack/Renderer/RendererAPI.h"
 
-class D3D12RendererAPI: public RendererAPI
+
+class D3D12RendererAPI 
 {
+public:
+
 private:
 
 protected:
 
-public:
+
 };
 #endif // !_Sqwack_Engine_D3D12RendererAPI_H_
 

@@ -21,11 +21,14 @@
 extern Sqwack::App* Sqwack::CreateApp();
 
 
+int main()
+{
+	return wWinMain(GetModuleHandle(NULL), NULL, GetCommandLine(), SW_SHOWNORMAL);
+}
+
+
 int CALLBACK wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPWSTR lpCmdLine, _In_ int nShowCmd)
 {
-	#ifdef SQWACK_DEBUG
-	//Run the console
-	#endif // SQWACK_DEBUG
 
 	//Maybe call a common "StartApp()" function for bot main entry points
 

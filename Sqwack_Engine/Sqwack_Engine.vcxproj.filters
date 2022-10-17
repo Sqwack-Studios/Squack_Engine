@@ -60,6 +60,9 @@
     </ClInclude>
     <ClInclude Include="Sqwack\src\pch.h" />
     <ClInclude Include="Sqwack\src\Platform\D3D12\D3D12Context.h" />
+    <ClInclude Include="Sqwack\src\Sqwack\Core\Assert.h" />
+    <ClInclude Include="Sqwack\src\Platform\D3D12\D3D12LogAssertion.h" />
+    <ClInclude Include="Sqwack\vendor\DirectX12\d3dx12.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sqwack\src\Platform\Windows\Win32Window.cpp">
@@ -69,5 +72,10 @@
       <Filter>Sqwack\Core</Filter>
     </ClCompile>
     <ClCompile Include="Sqwack\src\pch.cpp" />
+    <ClCompile Include="Sqwack\src\Platform\D3D12\D3D12LogAssertion.cpp" />
+    <ClCompile Include="Sqwack\src\Platform\D3D12\D3D12Context.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
 </Project>

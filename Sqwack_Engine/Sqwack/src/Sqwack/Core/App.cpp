@@ -31,7 +31,7 @@ namespace Sqwack {
 	{
 		while (true)
 		{
-
+			
 		}
 	}
 }

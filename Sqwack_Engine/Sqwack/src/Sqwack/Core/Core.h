@@ -28,6 +28,7 @@
 
 
 #include <stdint.h>
+#include <string>
 
 
 
@@ -38,16 +39,16 @@ namespace Sqwack {
 
 	/*  ----- INTEGERS ------  */
 	//unsigned ints standards
-	typedef uint8_t					UINT8;
-	typedef uint16_t				UINT16;
-	typedef uint32_t				UINT32;
-	typedef uint64_t				UINT64;
+	typedef uint8_t					_UINT8;
+	typedef uint16_t				_UINT16;
+	typedef uint32_t				_UINT32;
+	typedef uint64_t				_UINT64;
 
 	//signed ints
-	typedef int8_t					INT8;
-	typedef int16_t					INT16;
-	typedef int32_t					INT32;
-	typedef int64_t					INT64;
+	typedef int8_t					_INT8;
+	typedef int16_t					_INT16;
+	typedef int32_t					_INT32;
+	typedef int64_t					_INT64;
 	 
 	
 }

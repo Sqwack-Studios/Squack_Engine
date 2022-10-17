@@ -16,4 +16,7 @@
       <Filter>src\Sandbox</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Sandbox.rc" />
+  </ItemGroup>
 </Project>

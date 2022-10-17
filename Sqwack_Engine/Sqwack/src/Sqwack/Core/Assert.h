@@ -2,24 +2,32 @@
 / Sqwack Studios, 2022															 /
 /===============================================================================*/
 //==============================================================================//
-// Name				: D3D12Headers.h											 
+// Name				: Assert.h											 
 // Author			: Dani										
 // Version			:														     
-// Creation time	: 15/10/2022 14:30:11													 
+// Creation time	: 17/10/2022 16:57:51													 
 //==============================================================================//
 
-#ifndef _Sqwack_Engine_D3D12Headers_H_
-#define _Sqwack_Engine_D3D12Headers_H_
+#ifndef _Sqwack_Engine_Assert_H_
+#define _Sqwack_Engine_Assert_H_
 
 #pragma once
-#include <d3d12.h>
-#include "Sqwack/vendor/DirectX12/d3dx12.h"
-#include <dxgi1_6.h>
-#include <d3dcompiler.h>
-#include <DirectXMath.h>
-#include <comdef.h>
+#include "Sqwack/Core/Core.h"
 
 
 
-#endif // !_Sqwack_Engine_D3D12Headers_H_
+//---------- ASERTION MACRO -----------//
+#if SQWACK_DEBUG
+	#define ASSERT(x) if(!(x)) __debugbreak()
+#else 
+	#define ASSERT(x)	x
+#endif
+
+
+//------------ DIRECTX 12 ASSERTIONS --------- //
+#include "Platform/D3D12/D3D12LogAssertion.h"
+
+
+
+#endif // !_Sqwack_Engine_Assert_H_
 

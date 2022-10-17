@@ -1,0 +1,6 @@
+// Los archivos de sugerencia ayudan al IDE de Visual Studio a interpretar los identificadores de Visual C++
+// por ejemplo, los nombres de funciones y macros.
+// Para obtener más información, consulte https://go.microsoft.com/fwlink/?linkid=865984
+#define IID_PPV_ARGS(ppType) __uuidof(**(ppType)), IID_PPV_ARGS_Helper(ppType)
+#define DXCall(x) HRESULT hr_ = (x);ASSERT(DXLogCall(hr_, L#x, __FILE__, __LINE__))
+#define DXCall(x)
