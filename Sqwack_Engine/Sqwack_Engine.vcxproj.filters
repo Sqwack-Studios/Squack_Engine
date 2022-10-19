@@ -1,81 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Platform">
-      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    <Filter Include="src">
+      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Platform\D3D12">
-      <UniqueIdentifier>{97155E93-83E3-5199-6C77-C2BF58E42DFE}</UniqueIdentifier>
+    <Filter Include="src\Platform">
+      <UniqueIdentifier>{21CA02E5-0D2D-9289-B6B2-CA3FA2F45D0C}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Platform\Windows">
-      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
+    <Filter Include="src\Platform\D3D12">
+      <UniqueIdentifier>{CE3542F1-BA19-0347-237A-FD990F7DEDC8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Sqwack">
-      <UniqueIdentifier>{CFECBAD1-BB8E-E5A7-A449-F9FB908A6CF8}</UniqueIdentifier>
+    <Filter Include="src\Platform\Windows">
+      <UniqueIdentifier>{5B054582-4794-CE4B-F0B2-E246DC20DFF1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Sqwack\Core">
-      <UniqueIdentifier>{876AC35D-F31F-3C53-7C14-362AE8C83257}</UniqueIdentifier>
+    <Filter Include="src\Sqwack">
+      <UniqueIdentifier>{06C6192F-F27D-5B7C-5B85-34D8475CF66C}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Sqwack\Renderer">
-      <UniqueIdentifier>{5509DBDB-C194-48A0-CAA5-CB9436B0A4A0}</UniqueIdentifier>
+    <Filter Include="src\Sqwack\Core">
+      <UniqueIdentifier>{1E9E9D75-8A29-0B3A-933A-8E2EFF44673A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Sqwack\Renderer">
+      <UniqueIdentifier>{6C3043F6-D891-2004-61FF-66B6CD5F57C3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor">
+      <UniqueIdentifier>{B3738122-9F15-ACF8-88D0-BF4C74113349}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\DirectX12">
+      <UniqueIdentifier>{389147AD-248A-66FF-4DBC-4B843914460B}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Sqwack\src\Platform\D3D12\Adapter.h">
+      <Filter>src\Platform\D3D12</Filter>
+    </ClInclude>
     <ClInclude Include="Sqwack\src\Platform\D3D12\D3D12Headers.h">
-      <Filter>Platform\D3D12</Filter>
+      <Filter>src\Platform\D3D12</Filter>
+    </ClInclude>
+    <ClInclude Include="Sqwack\src\Platform\D3D12\D3D12LogAssertion.h">
+      <Filter>src\Platform\D3D12</Filter>
     </ClInclude>
     <ClInclude Include="Sqwack\src\Platform\D3D12\D3D12RendererAPI.h">
-      <Filter>Platform\D3D12</Filter>
+      <Filter>src\Platform\D3D12</Filter>
+    </ClInclude>
+    <ClInclude Include="Sqwack\src\Platform\D3D12\Device.h">
+      <Filter>src\Platform\D3D12</Filter>
     </ClInclude>
     <ClInclude Include="Sqwack\src\Platform\Windows\Win32Headers.h">
-      <Filter>Platform\Windows</Filter>
+      <Filter>src\Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="Sqwack\src\Platform\Windows\Win32Utils.h">
-      <Filter>Platform\Windows</Filter>
+      <Filter>src\Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="Sqwack\src\Platform\Windows\Win32Window.h">
-      <Filter>Platform\Windows</Filter>
+      <Filter>src\Platform\Windows</Filter>
     </ClInclude>
-    <ClInclude Include="Sqwack\src\Sqwack.h" />
+    <ClInclude Include="Sqwack\src\Sqwack.h">
+      <Filter>src</Filter>
+    </ClInclude>
     <ClInclude Include="Sqwack\src\Sqwack\Core\App.h">
-      <Filter>Sqwack\Core</Filter>
+      <Filter>src\Sqwack\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Sqwack\src\Sqwack\Core\Assert.h">
+      <Filter>src\Sqwack\Core</Filter>
     </ClInclude>
     <ClInclude Include="Sqwack\src\Sqwack\Core\Core.h">
-      <Filter>Sqwack\Core</Filter>
+      <Filter>src\Sqwack\Core</Filter>
     </ClInclude>
     <ClInclude Include="Sqwack\src\Sqwack\Core\EntryPoint.h">
-      <Filter>Sqwack\Core</Filter>
+      <Filter>src\Sqwack\Core</Filter>
     </ClInclude>
     <ClInclude Include="Sqwack\src\Sqwack\Core\Window.h">
-      <Filter>Sqwack\Core</Filter>
+      <Filter>src\Sqwack\Core</Filter>
     </ClInclude>
     <ClInclude Include="Sqwack\src\Sqwack\Renderer\GraphicalContext.h">
-      <Filter>Sqwack\Renderer</Filter>
+      <Filter>src\Sqwack\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="Sqwack\src\Sqwack\Renderer\Renderer.h">
-      <Filter>Sqwack\Renderer</Filter>
+      <Filter>src\Sqwack\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="Sqwack\src\Sqwack\Renderer\RendererAPI.h">
-      <Filter>Sqwack\Renderer</Filter>
+      <Filter>src\Sqwack\Renderer</Filter>
     </ClInclude>
-    <ClInclude Include="Sqwack\src\pch.h" />
-    <ClInclude Include="Sqwack\src\Platform\D3D12\D3D12Context.h" />
-    <ClInclude Include="Sqwack\src\Sqwack\Core\Assert.h" />
-    <ClInclude Include="Sqwack\src\Platform\D3D12\D3D12LogAssertion.h" />
-    <ClInclude Include="Sqwack\vendor\DirectX12\d3dx12.h" />
+    <ClInclude Include="Sqwack\src\pch.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="Sqwack\vendor\DirectX12\d3dx12.h">
+      <Filter>vendor\DirectX12</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Sqwack\src\Platform\D3D12\Adapter.cpp">
+      <Filter>src\Platform\D3D12</Filter>
+    </ClCompile>
+    <ClCompile Include="Sqwack\src\Platform\D3D12\D3D12LogAssertion.cpp">
+      <Filter>src\Platform\D3D12</Filter>
+    </ClCompile>
+    <ClCompile Include="Sqwack\src\Platform\D3D12\Device.cpp">
+      <Filter>src\Platform\D3D12</Filter>
+    </ClCompile>
     <ClCompile Include="Sqwack\src\Platform\Windows\Win32Window.cpp">
-      <Filter>Platform\Windows</Filter>
+      <Filter>src\Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="Sqwack\src\Sqwack\Core\App.cpp">
-      <Filter>Sqwack\Core</Filter>
+      <Filter>src\Sqwack\Core</Filter>
     </ClCompile>
-    <ClCompile Include="Sqwack\src\pch.cpp" />
-    <ClCompile Include="Sqwack\src\Platform\D3D12\D3D12LogAssertion.cpp" />
-    <ClCompile Include="Sqwack\src\Platform\D3D12\D3D12Context.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="cpp.hint" />
+    <ClCompile Include="Sqwack\src\pch.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
