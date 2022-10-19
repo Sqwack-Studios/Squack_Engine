@@ -26,11 +26,25 @@ namespace Sqwack {
 	{
 	public:
 
-		Win32Window(const UINT16& IDSClassName, const UINT16& IDSWindowTitle, const UINT16& IDIcon, const UINT16& width, const UINT16& height);
+		Win32Window(const WindowSpecification& specs);
 		virtual ~Win32Window();
 
-		virtual Win32Window* SpawnWindow();
-		bool InitializeWindow();
+		virtual void Init(bool resizable = true, bool maximized = false) override;
+
+		virtual inline _UINT16 GetWidth() const override { return m_Width; } 
+		virtual inline _UINT16 GetHeight() const override { return m_Height; }
+
+		virtual inline bool IsVSync() const override { return m_VSync; }
+		virtual inline void SetVSync(bool VSync) override { m_VSync = VSync; }
+
+		virtual inline const std::string_view& GetTitle() override { return std::string_view(m_Title); }
+		virtual inline void SetTitle(const std::string& title) override { m_Title = title; }
+
+		virtual void Resize() override;
+
+
+
+
 		
 		void ProcessMessage(MSG& msg);
 
@@ -42,18 +56,24 @@ namespace Sqwack {
 
 		static LRESULT CALLBACK WindowProcess(HWND hWnd, UINT message, WPARAM wparam, LPARAM lparam);
 		void CreateWindowClass();
+		void CreateWindowHWND();
 		
 		
 		
-	
+		_UINT16                     m_Width;
+		_UINT16                     m_Height;
+		std::string                 m_Title;
 
-		HWND						m_optr_Window;
+		bool                        m_FullScreen;
+		bool                        m_VSync;
+		WindowSpecification         m_Specification;
+
+
+
+		//Internal Win32 variables
+		HWND						m_HWND;
 		WCHAR						m_WindowClass[MAX_NAME_STRING];
 		WCHAR						m_WindowTitle[MAX_NAME_STRING];
-
-		UINT16						m_WindowWidth;
-		UINT16						m_WindowHeight;
-
 		HICON						m_hIcon;
 
 	};	

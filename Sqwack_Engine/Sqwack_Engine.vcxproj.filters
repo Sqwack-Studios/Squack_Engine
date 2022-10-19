@@ -87,6 +87,7 @@
     <ClInclude Include="Sqwack\vendor\DirectX12\d3dx12.h">
       <Filter>vendor\DirectX12</Filter>
     </ClInclude>
+    <ClInclude Include="Sqwack\src\Sqwack\Core\Specifications.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sqwack\src\Platform\D3D12\Adapter.cpp">

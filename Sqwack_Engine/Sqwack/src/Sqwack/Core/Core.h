@@ -44,6 +44,7 @@ namespace Sqwack {
 	typedef uint32_t				_UINT32;
 	typedef uint64_t				_UINT64;
 
+	
 	//signed ints
 	typedef int8_t					_INT8;
 	typedef int16_t					_INT16;

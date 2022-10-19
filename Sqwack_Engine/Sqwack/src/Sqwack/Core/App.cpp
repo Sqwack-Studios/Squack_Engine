@@ -18,15 +18,22 @@
 #include "Sqwack/Core/App.h"
 
 
+
 namespace Sqwack {
 
 
-	App::App()
+	App::App(const ApplicationSpecification& specs):
+		m_Specification(specs)
 	{
+		//initialize the window
 	}
+
+
 	App::~App()
 	{
+
 	}
+
 	void App::Run()
 	{
 		while (true)

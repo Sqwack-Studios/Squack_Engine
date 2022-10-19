@@ -156,6 +156,10 @@
     <ClInclude Include="Sqwack\src\Sqwack\Core\Assert.h" />
     <ClInclude Include="Sqwack\src\Sqwack\Core\Core.h" />
     <ClInclude Include="Sqwack\src\Sqwack\Core\EntryPoint.h" />
+    <ClInclude Include="Sqwack\src\Sqwack\Core\Specifications.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="Sqwack\src\Sqwack\Core\Window.h" />
     <ClInclude Include="Sqwack\src\Sqwack\Renderer\GraphicalContext.h" />
     <ClInclude Include="Sqwack\src\Sqwack\Renderer\Renderer.h" />

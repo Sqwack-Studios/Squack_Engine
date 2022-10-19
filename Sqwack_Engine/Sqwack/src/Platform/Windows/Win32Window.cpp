@@ -22,30 +22,62 @@
 namespace Sqwack {
 
 
-	Win32Window::Win32Window(const UINT16& IDSClassName, const UINT16& IDSWindowTitle, const UINT16& IDIcon, const UINT16& width, const UINT16& height):
-		m_WindowWidth(width),
-		m_WindowHeight(height),
-		m_optr_Window(nullptr)
+	Win32Window::Win32Window(const WindowSpecification& specs) :
+		m_Specification(specs),
+		m_Width(specs.windowWidth),
+		m_Height(specs.windowHeight),
+		m_VSync(specs.vsync),
+		m_FullScreen(specs.fullscreen)
+	
 	{
-		LoadString(HInstance(), IDSWindowTitle, m_WindowTitle, MAX_NAME_STRING);
-		LoadString(HInstance(), IDSClassName, m_WindowClass, MAX_NAME_STRING);
-		m_hIcon = LoadIcon(HInstance(), MAKEINTRESOURCE(IDIcon));
+		
+		{
+			std::wstring wName(specs.windowName.begin(), specs.windowName.end());
+			if (specs.windowName.length() > MAX_NAME_STRING - 1)
+			{
+
+				wName.copy(&m_WindowTitle[0], MAX_NAME_STRING - 1);
+				wName.copy(&m_WindowClass[0], MAX_NAME_STRING - 1);
+
+			}
+			else
+			{
+				wName.copy(&m_WindowTitle[0], specs.windowName.length() + 1);
+				wName.copy(&m_WindowClass[0], specs.windowName.length() + 1);
+			}
+		}
+
+		
 	}
+
 	Win32Window::~Win32Window()
 	{
+
 	}
 
 
-	Win32Window* Win32Window::SpawnWindow()
+	Window* Window::Create(const WindowSpecification& specs)
 	{
-		if (m_optr_Window)
-		{
-			ShowWindow(m_optr_Window, SW_SHOW);
-			return this;
-			
-		}
-		return nullptr;
+		return new Win32Window(specs);
 	}
+
+	void Win32Window::Init(bool resizable, bool maximized)
+	{
+		//Create the class
+		//Create the window Handler
+
+		//Check for D3D12 support¿?
+
+		//Setup messages callback processing
+		//Setup resizable and maximized flags
+		// 
+		//Create the window
+
+		//Add fullscreen support
+		//Add resize support: remember to destroy and resize the swap chain accordingly
+	}
+
+
 
 	LRESULT CALLBACK Win32Window::WindowProcess(HWND hWnd, UINT message, WPARAM wparam, LPARAM lparam)
 	{
@@ -88,6 +120,11 @@ namespace Sqwack {
 		RegisterClassEx(&wcex);
 	}
 
+	void Win32Window::CreateWindowHWND()
+	{
+
+	}
+
 	void Win32Window::ProcessMessage(MSG& msg)
 	{
 		if (PeekMessage(&msg, 0, 0, 0, PM_REMOVE))
@@ -100,34 +137,6 @@ namespace Sqwack {
 
 
 
-
-	bool Win32Window::InitializeWindow()
-	{
-
-		CreateWindowClass();
-
-		m_optr_Window = CreateWindow(
-			m_WindowClass,
-			m_WindowTitle,
-			WS_OVERLAPPEDWINDOW,
-			CW_USEDEFAULT,
-			0,
-			m_WindowWidth,
-			m_WindowHeight,
-			nullptr,
-			nullptr,
-			HInstance(),
-			nullptr
-		);
-
-		
-		if (m_optr_Window)		return true;
-
-		
-		MessageBox(0, L"Failed to create Window!", 0, 0);
-		return false;
-		
-	}
 
 
 }

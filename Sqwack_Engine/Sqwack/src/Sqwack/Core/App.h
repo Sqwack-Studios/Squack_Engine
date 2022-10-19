@@ -14,21 +14,30 @@
 
 #pragma once
 #include "Sqwack/Core/Core.h"
+#include "Sqwack/Core/Specifications.h"
+#include "Sqwack/Core/Window.h"
+
+
 
 namespace Sqwack {
+
+
 
 	class SQWACK_API App
 	{
 
 	public:
 
-		App();
+		App(const ApplicationSpecification& specs);
 		virtual ~App();
 
 
 		void Run();
 
 	private:
+
+		std::unique_ptr<Window>                 m_Window;
+		ApplicationSpecification                m_Specification;
 
 	protected:
 
