@@ -25,6 +25,7 @@
 #include <string>
 #include <vector>
 #include <functional>
+#include <assert.h>
 
 #include "Sqwack/Core/Core.h"
 

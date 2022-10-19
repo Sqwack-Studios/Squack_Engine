@@ -55,8 +55,8 @@ namespace Sqwack {
 	private: 
 
 		static LRESULT CALLBACK WindowProcess(HWND hWnd, UINT message, WPARAM wparam, LPARAM lparam);
-		void CreateWindowClass();
-		void CreateWindowHWND();
+		void RegisterWindowClass();
+		HWND CreateWindowHWND();
 		
 		
 		

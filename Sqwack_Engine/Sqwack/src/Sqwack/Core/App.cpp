@@ -36,9 +36,14 @@ namespace Sqwack {
 
 	void App::Run()
 	{
-		while (true)
+
+		while (true) 
 		{
-			
+			//First we poll events from the windows msg system
+
+			//Second we update the game loop
+
+			//Third we render
 		}
 	}
 }

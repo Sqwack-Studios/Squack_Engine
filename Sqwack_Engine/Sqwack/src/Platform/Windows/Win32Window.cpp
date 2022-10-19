@@ -19,6 +19,7 @@
 #include "Win32Window.h"
 
 
+
 namespace Sqwack {
 
 
@@ -64,16 +65,21 @@ namespace Sqwack {
 	void Win32Window::Init(bool resizable, bool maximized)
 	{
 		//Create the class
+		RegisterWindowClass();
+
 		//Create the window Handler
+		m_HWND = CreateWindowHWND();
 
 		//Check for D3D12 support¿?
 
 		//Setup messages callback processing
+		
 		//Setup resizable and maximized flags
-		// 
+		
 		//Create the window
 
-		//Add fullscreen support
+		//Add fullscreen support: fullscreen should resize the swap chains?
+		
 		//Add resize support: remember to destroy and resize the swap chain accordingly
 	}
 
@@ -94,33 +100,31 @@ namespace Sqwack {
 		return DefWindowProc(hWnd, message, wparam, lparam);
 	}
 
-	void Win32Window::CreateWindowClass()
+	void Win32Window::RegisterWindowClass()
 	{
 		WNDCLASSEX wcex;
 
 		wcex.cbSize = sizeof(WNDCLASSEX);
-		wcex.style = CS_HREDRAW | CS_VREDRAW;
+		wcex.style = CS_HREDRAW | CS_VREDRAW; //affects every single instance of this window class
 		wcex.cbClsExtra = 0;
 		wcex.cbWndExtra = 0;
-
 		wcex.hCursor = LoadCursor(nullptr, IDC_ARROW);
-		wcex.hbrBackground = static_cast<HBRUSH>(GetStockObject(NULL_BRUSH));
-
-		wcex.hIcon = m_hIcon;
-		wcex.hIconSm = m_hIcon;
-
+		wcex.hbrBackground = (HBRUSH) (COLOR_WINDOW + 1);
+		//TODO: App icons
+		wcex.hIcon = LoadIcon(NULL, IDI_QUESTION);
+		wcex.hIconSm = LoadIcon(NULL, IDI_QUESTION);
 		wcex.lpszClassName = m_WindowClass;
-
 		wcex.lpszMenuName = nullptr;
-
 		wcex.hInstance = HInstance();
-
 		wcex.lpfnWndProc = WindowProcess;
 
-		RegisterClassEx(&wcex);
+		HRESULT hr = RegisterClassEx(&wcex);
+
+		assert(SUCCEEDED(hr));
+		
 	}
 
-	void Win32Window::CreateWindowHWND()
+	HWND Win32Window::CreateWindowHWND()
 	{
 
 	}
