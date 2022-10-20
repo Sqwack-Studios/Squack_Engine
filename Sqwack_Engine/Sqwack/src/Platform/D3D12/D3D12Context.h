@@ -24,13 +24,21 @@ namespace Sqwack
 		D3D12Context();
 		~D3D12Context();
 
-		static D3D12Context* Create();
+		void Init();
+		
 
+		static D3D12Context* Create();
 
 	private:
 
-		std::unique_ptr<Device>           m_Device;
-		std::unique_ptr<Adapter>          m_Adapter;
+		void CreateFactory();
+
+	private:
+
+		std::unique_ptr<Device>                        m_Device;
+		std::unique_ptr<Adapter>                       m_Adapter;
+
+		Microsoft::WRL::ComPtr<IDXGIFactory4>          m_dxgiFactory4;
 	
 	};
 }

@@ -17,13 +17,13 @@
 #include "Adapter.h"
 
 Adapter::Adapter(Microsoft::WRL::ComPtr<IDXGIAdapter4> adapter) :
-	m_dxgiAdapter(adapter)	
+	m_dxgiAdapter(adapter),
+	m_adapterDesc(DXGI_ADAPTER_DESC{})
 {
-	m_dxgiAdapter->GetDesc(&m_adapterDesc);
-	FillDisplayDescs();
+	
 }
 
-std::shared_ptr<Adapter> Adapter::CreateAdapter(Microsoft::WRL::ComPtr<IDXGIFactory4> factory4)
+Microsoft::WRL::ComPtr<IDXGIAdapter4> Adapter::QueryBestAdapter(Microsoft::WRL::ComPtr<IDXGIFactory4> factory4)
 {
 	Microsoft::WRL::ComPtr<IDXGIAdapter> dxgiAdapter{nullptr};
 	Microsoft::WRL::ComPtr<IDXGIAdapter4> dxgiAdapter4{nullptr};
@@ -64,12 +64,21 @@ std::shared_ptr<Adapter> Adapter::CreateAdapter(Microsoft::WRL::ComPtr<IDXGIFact
 	DXCall(HRESULT hr_ = dxgiAdapter.As(&dxgiAdapter4), hr_);
 
 	if(SUCCEEDED(hr_))
-		return std::make_shared<Adapter>(dxgiAdapter4);
+		return dxgiAdapter4;
 
 	return nullptr;
 }
 
+Adapter* Adapter::Create(Microsoft::WRL::ComPtr<IDXGIAdapter4> adapter)
+{
+	return new Adapter(adapter);
+}
 
+void Adapter::Init()
+{
+	m_dxgiAdapter->GetDesc(&m_adapterDesc);
+	FillDisplayDescs();
+}
 
 DisplayDescs Adapter::QueryDisplaySpecs(Microsoft::WRL::ComPtr<IDXGIOutput> output, DXGI_OUTPUT_DESC outputDesc, DXGI_FORMAT format)
 {

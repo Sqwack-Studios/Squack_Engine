@@ -77,6 +77,11 @@ namespace Sqwack {
 
 		//Add resize support: remember to destroy and resize the swap chain accordingly
 
+
+		//Create and initialize the context and device
+		m_D3D12Context = std::unique_ptr<D3D12Context>(D3D12Context::Create());
+		m_D3D12Context->Init();
+
 		//Create and initialize the swap chain
 
 		/*m_SwapChain = */
