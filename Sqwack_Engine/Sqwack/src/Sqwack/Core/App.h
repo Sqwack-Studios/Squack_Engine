@@ -45,7 +45,7 @@ namespace Sqwack {
 	};
 
 	//To be defined in client
-	App* CreateApp();
+	App* CreateApp(const Sqwack::ApplicationSpecification& specs);
 }
 #endif // !_Sqwack_Engine_App_H_
 

@@ -47,7 +47,7 @@ bool Device::Init()
 		return false;
 
 	
-	return false;
+	return true;
 }
 
 bool Device::CreateFactory()
@@ -55,7 +55,7 @@ bool Device::CreateFactory()
 	DXCall(HRESULT hr_ = CreateDXGIFactory1(IID_PPV_ARGS(&m_dxgiFactory4)), hr_);
 
 	
-	return (hr_ >= 0);
+	return SUCCEEDED(hr_);
 }
 
 bool Device::EnableDebugLayer()
@@ -66,7 +66,7 @@ bool Device::EnableDebugLayer()
 
 	debugController->EnableDebugLayer();
 
-	return (hr_ >= 0);
+	return SUCCEEDED(hr_);
 }
 
 bool Device::CheckFeatureSupport()
@@ -86,7 +86,7 @@ bool Device::CreateDevice()
 
 	DXCall(HRESULT hr_ = D3D12CreateDevice(dxgiAdapter4.Get(), D3D_FEATURE_LEVEL_11_0, IID_PPV_ARGS(&m_ID3DDevice)), hr_);
 
-	return (hr_ >= 0);
+	return SUCCEEDED(hr_);
 }
 
 

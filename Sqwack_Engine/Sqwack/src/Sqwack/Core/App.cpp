@@ -19,6 +19,7 @@
 
 
 
+
 namespace Sqwack {
 
 
@@ -26,6 +27,8 @@ namespace Sqwack {
 		m_Specification(specs)
 	{
 		//initialize the window
+		m_Window = std::unique_ptr<Window>(Window::Create(WindowSpecification()));
+		m_Window->Init();
 	}
 
 
@@ -36,10 +39,17 @@ namespace Sqwack {
 
 	void App::Run()
 	{
-
-		while (true) 
+		
+		MSG msg{};
+		PeekMessage(&msg, NULL, 0, 0, PM_NOREMOVE);
+		while (msg.message != WM_QUIT) 
 		{
 			//First we poll events from the windows msg system
+			if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
+			{
+				m_Window->ProcessMessage(msg);
+			}
+			
 
 			//Second we update the game loop
 

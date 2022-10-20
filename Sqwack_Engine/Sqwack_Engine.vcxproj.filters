@@ -69,6 +69,9 @@
     <ClInclude Include="Sqwack\src\Sqwack\Core\EntryPoint.h">
       <Filter>src\Sqwack\Core</Filter>
     </ClInclude>
+    <ClInclude Include="Sqwack\src\Sqwack\Core\Specifications.h">
+      <Filter>src\Sqwack\Core</Filter>
+    </ClInclude>
     <ClInclude Include="Sqwack\src\Sqwack\Core\Window.h">
       <Filter>src\Sqwack\Core</Filter>
     </ClInclude>
@@ -87,7 +90,11 @@
     <ClInclude Include="Sqwack\vendor\DirectX12\d3dx12.h">
       <Filter>vendor\DirectX12</Filter>
     </ClInclude>
-    <ClInclude Include="Sqwack\src\Sqwack\Core\Specifications.h" />
+    <ClInclude Include="Sqwack\src\Platform\D3D12\Fence.h" />
+    <ClInclude Include="Sqwack\src\Platform\D3D12\SwapChain.h" />
+    <ClInclude Include="Sqwack\src\Platform\D3D12\CommandQueue.h" />
+    <ClInclude Include="Sqwack\src\Platform\D3D12\CommandList.h" />
+    <ClInclude Include="Sqwack\src\Platform\D3D12\D3D12Context.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sqwack\src\Platform\D3D12\Adapter.cpp">
@@ -108,5 +115,9 @@
     <ClCompile Include="Sqwack\src\pch.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="Sqwack\src\Platform\D3D12\Fence.cpp" />
+    <ClCompile Include="Sqwack\src\Platform\D3D12\CommandQueue.cpp" />
+    <ClCompile Include="Sqwack\src\Platform\D3D12\CommandList.cpp" />
+    <ClCompile Include="Sqwack\src\Platform\D3D12\D3D12Context.cpp" />
   </ItemGroup>
 </Project>

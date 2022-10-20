@@ -12,10 +12,11 @@
 #define _Sqwack_Engine_Win32Window_H_
 
 #pragma once
-
-
 #include "Win32Utils.h"
 #include "Sqwack/Core/Window.h"
+#include "Platform/D3D12/SwapChain.h"
+#include "Platform/D3D12/D3D12Context.h"
+
 
 
 
@@ -37,20 +38,21 @@ namespace Sqwack {
 		virtual inline bool IsVSync() const override { return m_VSync; }
 		virtual inline void SetVSync(bool VSync) override { m_VSync = VSync; }
 
-		virtual inline const std::string_view& GetTitle() override { return std::string_view(m_Title); }
+		virtual inline const std::string& GetTitle() override { return m_Title; }
 		virtual inline void SetTitle(const std::string& title) override { m_Title = title; }
 
-		virtual void Resize() override;
+		virtual void Resize(_UINT16 width, _UINT16 height) override;
+		virtual void Fullscreen() override;
 
 
-
-
-		
-		void ProcessMessage(MSG& msg);
+		void ProcessMessage(MSG &msg);
 
 	protected:
 
+	private:
 
+		SwapChain                             m_SwapChain;
+		std::unique_ptr<D3D12Context>         m_D3D12Context;
 
 	private: 
 
@@ -60,22 +62,26 @@ namespace Sqwack {
 		
 		
 		
-		_UINT16                     m_Width;
-		_UINT16                     m_Height;
-		std::string                 m_Title;
+		
+		_UINT16                              m_Width;
+		_UINT16                              m_Height;
+		std::string                          m_Title;
 
-		bool                        m_FullScreen;
-		bool                        m_VSync;
-		WindowSpecification         m_Specification;
+		bool                                 m_FullScreen;
+		bool                                 m_VSync;
+		WindowSpecification                  m_Specification;
 
 
 
-		//Internal Win32 variables
-		HWND						m_HWND;
-		WCHAR						m_WindowClass[MAX_NAME_STRING];
-		WCHAR						m_WindowTitle[MAX_NAME_STRING];
-		HICON						m_hIcon;
+		//---------Internal Win32 variables--------------------------//
 
+		HWND						         m_HWND;
+		//WCHAR						         m_WindowClass[MAX_NAME_STRING];
+		//WCHAR						         m_WindowTitle[MAX_NAME_STRING];
+		std::wstring				         m_WindowClass;
+		std::wstring				         m_WindowTitle;
+		//HICON						         m_hIcon;
+		static Win32Window*                  m_WindowPtr;
 	};	
 
 }

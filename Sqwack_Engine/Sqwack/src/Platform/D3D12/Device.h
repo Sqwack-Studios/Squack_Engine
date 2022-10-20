@@ -44,9 +44,8 @@ private:
 private:
 
 	Microsoft::WRL::ComPtr<IDXGIFactory4>				m_dxgiFactory4;
-
 	Microsoft::WRL::ComPtr<ID3D12Device>				m_ID3DDevice;
-	Microsoft::WRL::ComPtr<ID3D12Fence>					m_ID3DFence;
+
 
 	UINT												m_RtvDescriptorSize;
 	UINT												m_DsvDescriptorSize;
@@ -55,12 +54,6 @@ private:
 	std::shared_ptr<Adapter>                            m_Adapter;
 
 	
-
-
-
-	
-	
-
 
 private:
 

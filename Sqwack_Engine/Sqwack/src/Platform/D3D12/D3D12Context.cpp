@@ -2,45 +2,41 @@
 / Sqwack Studios, 2022															 /
 /===============================================================================*/
 //==============================================================================//
-// Name				: SandboxApp.cpp										
+// Name				: D3D12Context.cpp										
 // Author			: Dani										 
 // Version			:														     
-// Creation time	: 14/10/2022 14:18:13													 
+// Creation time	: 20/10/2022 17:50:03													 
 //==============================================================================//
 
-#ifndef _Sandbox_SandboxApp_CPP_
-#define _Sandbox_SandboxApp_CPP_
+#include "pch.h"
+
+#ifndef _Sqwack_Engine_D3D12Context_CPP_
+#define _Sqwack_Engine_D3D12Context_CPP_
 
 #pragma once
-#include <Sqwack.h>
+#include "D3D12Context.h"
 
-
-class Sandbox : public Sqwack::App
+namespace Sqwack
 {
-public:
-	Sandbox(const Sqwack::ApplicationSpecification& specs):
-		App(specs)
+	D3D12Context::D3D12Context()
 	{
 
 	}
 
-	~Sandbox()
+	D3D12Context::~D3D12Context()
 	{
 
 	}
-};
 
-
-
-Sqwack::App* Sqwack::CreateApp(const Sqwack::ApplicationSpecification& specs)
-{
-	return new Sandbox(specs);
+	D3D12Context* D3D12Context::Create()
+	{
+		return new D3D12Context();
+	}
 }
 
 
 
 
 
-
-#endif // !_Sandbox_SandboxApp_CPP_
+#endif // !_Sqwack_Engine_D3D12Context_CPP_
 

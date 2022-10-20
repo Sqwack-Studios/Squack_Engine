@@ -18,7 +18,7 @@
 #ifdef SQWACK_PLATFORM_WINDOWS
 
 
-extern Sqwack::App* Sqwack::CreateApp();
+extern Sqwack::App* Sqwack::CreateApp(const Sqwack::ApplicationSpecification& specs);
 
 
 int main()
@@ -33,11 +33,11 @@ int CALLBACK wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance
 	//Maybe call a common "StartApp()" function for bot main entry points
 
 	//Parse command line args
-	auto app = Sqwack::CreateApp();
+	auto app = Sqwack::CreateApp(Sqwack::ApplicationSpecification());
 	app->Run();
 	delete app;
 
-
+	return 0;
 }
 
 

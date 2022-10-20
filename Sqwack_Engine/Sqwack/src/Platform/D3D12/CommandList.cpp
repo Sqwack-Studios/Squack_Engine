@@ -2,45 +2,35 @@
 / Sqwack Studios, 2022															 /
 /===============================================================================*/
 //==============================================================================//
-// Name				: SandboxApp.cpp										
+// Name				: CommandList.cpp										
 // Author			: Dani										 
 // Version			:														     
-// Creation time	: 14/10/2022 14:18:13													 
+// Creation time	: 20/10/2022 14:53:55													 
 //==============================================================================//
+#include "pch.h"
 
-#ifndef _Sandbox_SandboxApp_CPP_
-#define _Sandbox_SandboxApp_CPP_
+#ifndef _Sqwack_Engine_CommandList_CPP_
+#define _Sqwack_Engine_CommandList_CPP_
 
 #pragma once
-#include <Sqwack.h>
+#include "CommandList.h"
 
+namespace Sqwack
 
-class Sandbox : public Sqwack::App
 {
-public:
-	Sandbox(const Sqwack::ApplicationSpecification& specs):
-		App(specs)
+	CommandList::CommandList()
 	{
 
 	}
 
-	~Sandbox()
+	CommandList::~CommandList()
 	{
 
 	}
-};
-
-
-
-Sqwack::App* Sqwack::CreateApp(const Sqwack::ApplicationSpecification& specs)
-{
-	return new Sandbox(specs);
 }
 
 
 
 
-
-
-#endif // !_Sandbox_SandboxApp_CPP_
+#endif // !_Sqwack_Engine_CommandList_CPP_
 

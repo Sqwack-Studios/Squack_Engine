@@ -20,7 +20,7 @@ namespace Sqwack {
 	{
 	public:
 
-		virtual ~Window() = 0;
+		virtual ~Window() {};
 
 		virtual void Init(bool resizable = true, bool maximized = false) = 0;
 
@@ -30,12 +30,18 @@ namespace Sqwack {
 		virtual inline bool IsVSync() const = 0;
 		virtual inline void SetVSync(bool VSync) = 0;
 
-		virtual inline const std::string_view& GetTitle() = 0;
+		virtual inline const std::string& GetTitle() = 0;
 		virtual inline void SetTitle(const std::string& title) = 0;
 
-		virtual void Resize() = 0;
+		virtual void Resize(_UINT16 width, _UINT16 height) = 0;
+		virtual void Fullscreen() = 0;
+
+		virtual void ProcessMessage(MSG& msg) = 0;
 
 		static Window* Create(const WindowSpecification& specs);
+
+
+		static const _UINT8         m_SwapChainBufferCount{ 2 };
 
 	protected:
 

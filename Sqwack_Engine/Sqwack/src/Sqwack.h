@@ -24,6 +24,8 @@
 #include "Sqwack/Core/Core.h"
 #include "Sqwack/Core/App.h"
 #include "Sqwack/Core/Window.h"
+#include "Sqwack/Core/Specifications.h"
+
 
 
 
