@@ -30,8 +30,12 @@ namespace Sqwack
 
 	}
 
+	std::unique_ptr<CommandQueue> CommandQueue::Create()
+	{
+		return std::make_unique<CommandQueue>();
+	}
 
-	void CommandQueue::Init(Microsoft::WRL::ComPtr<ID3D12Device> device, const _UINT16& numBackBuffers)
+	void CommandQueue::Init(Microsoft::WRL::ComPtr<ID3D12Device> device, const _UINT8&  bufferCount)
 	{
 		Microsoft::WRL::ComPtr<ID3D12Device> id3dDevice{ device };
 
@@ -46,19 +50,14 @@ namespace Sqwack
 		DXCall(HRESULT hr_ = id3dDevice->CreateCommandQueue(&queueDesc, IID_PPV_ARGS(&m_ID3DCommandQueue)), hr_);
 
 
-		//Create as many command list as frames on the fly
-		// 
-		//Create the Command Allocator
+		//Create as many command list as backbuffers
+		m_CommandListBuffer.reserve(bufferCount);
+		for (size_t i = 0; i < bufferCount; i++)
+		{
+			m_CommandListBuffer.push_back(CommandList::Create());
+			m_CommandListBuffer[i]->Init(id3dDevice);
+		}
 
-		//DXCall(HRESULT hr_ = id3dDevice->CreateCommandAllocator(D3D12_COMMAND_LIST_TYPE_DIRECT, IID_PPV_ARGS(m_ID3DCommandAlloc.GetAddressOf())), hr_);
-
-
-		////Create the Command List
-
-		//DXCall(HRESULT hr_ = id3dDevice->CreateCommandList(0, D3D12_COMMAND_LIST_TYPE_DIRECT, m_ID3DCommandAlloc.Get(), nullptr, IID_PPV_ARGS(m_ID3DCommandList.GetAddressOf())), hr_);
-
-		////Close the Command List ASAP because we will need to Reset(). The command list must be closed before reseting
-		//m_ID3DCommandList->Close();
 
 	}
 }

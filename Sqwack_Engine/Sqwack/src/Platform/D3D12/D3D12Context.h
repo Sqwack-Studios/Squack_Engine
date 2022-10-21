@@ -33,6 +33,8 @@ namespace Sqwack
 
 		static D3D12Context* Create();
 
+		inline Microsoft::WRL::ComPtr<ID3D12Device> GetDevice() const { return m_Device->GetDevice(); }
+
 	private:
 
 		void CreateFactory();

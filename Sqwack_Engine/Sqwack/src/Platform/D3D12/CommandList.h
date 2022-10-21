@@ -24,6 +24,10 @@ namespace Sqwack
 		CommandList();
 		~CommandList();
 
+		static std::unique_ptr<CommandList> Create();
+
+		void Init(Microsoft::WRL::ComPtr<ID3D12Device> device);
+
 	private:
 
 		Microsoft::WRL::ComPtr<ID3D12CommandAllocator>          m_ID3DCommandAlloc;

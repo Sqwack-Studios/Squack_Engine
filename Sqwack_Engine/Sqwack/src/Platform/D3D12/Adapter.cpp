@@ -78,9 +78,9 @@ namespace Sqwack
 		return nullptr;
 	}
 
-	Adapter* Adapter::Create(Microsoft::WRL::ComPtr<IDXGIAdapter4> adapter)
+	std::unique_ptr<Adapter> Adapter::Create(Microsoft::WRL::ComPtr<IDXGIAdapter4> adapter)
 	{
-		return new Adapter(adapter);
+		return std::make_unique<Adapter>(adapter);
 	}
 
 	void Adapter::Init()

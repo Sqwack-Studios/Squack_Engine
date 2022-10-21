@@ -28,14 +28,14 @@ namespace Sqwack
 		Device& operator=(const Device& device) = delete;
 		~Device();
 
-		static Device* Create();
+		static std::unique_ptr<Device> Create();
 
 
 
 		void Init(Microsoft::WRL::ComPtr<IDXGIAdapter4> adapter4);
 
 	public:
-
+		inline Microsoft::WRL::ComPtr<ID3D12Device> GetDevice() const { return m_ID3DDevice; }
 
 	private:
 

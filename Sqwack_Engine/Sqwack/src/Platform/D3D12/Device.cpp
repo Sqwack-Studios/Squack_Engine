@@ -34,9 +34,9 @@ namespace Sqwack
 
 	}
 
-	Device* Device::Create()
+	std::unique_ptr<Device> Device::Create()
 	{
-		return new Device();
+		return std::make_unique<Device> ();
 	}
 
 

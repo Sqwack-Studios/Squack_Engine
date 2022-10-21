@@ -121,5 +121,6 @@
     <ClCompile Include="Sqwack\src\Platform\D3D12\CommandList.cpp" />
     <ClCompile Include="Sqwack\src\Platform\D3D12\D3D12Context.cpp" />
     <ClCompile Include="Sqwack\src\Platform\D3D12\SwapChain.cpp" />
+    <ClCompile Include="Sqwack\src\Platform\D3D12\D3D12Renderer.cpp" />
   </ItemGroup>
 </Project>

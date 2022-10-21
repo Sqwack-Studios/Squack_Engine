@@ -17,12 +17,13 @@
 
 #pragma once
 #include "Win32Window.h"
+#include "Platform/D3D12/D3D12Renderer.h"
 
 
 
 namespace Sqwack {
 
-	Win32Window* Win32Window::m_WindowPtr = nullptr;
+	Win32Window* Win32Window::m_SelfWindowPtr = nullptr;
 
 	Win32Window::Win32Window(const WindowSpecification& specs) :
 		m_Specification(specs),
@@ -33,7 +34,7 @@ namespace Sqwack {
 		m_HWND(nullptr),
 		m_SwapChain(DXGI_SWAP_CHAIN_DESC{})
 	{
-		m_WindowPtr = this;
+		m_SelfWindowPtr = this;
 
 		{
 			m_WindowClass = m_WindowTitle = std::wstring(specs.windowName.begin(), specs.windowName.end());
@@ -110,6 +111,8 @@ namespace Sqwack {
 		/*bufferDesc.RefreshRate = m_D3D12Context*/
 		
 		m_SwapChain.Init(scDesc, m_D3D12Context->GetFactory4());
+
+		D3D12Renderer::Init();
 
 	}
 

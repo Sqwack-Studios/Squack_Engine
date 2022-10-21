@@ -26,12 +26,17 @@ namespace Sqwack
 	{
 	public:
 
-		inline SwapChain* GetSwapChain() { return m_Window->GetSwapChain(); }
+		static void Init();
+
+		
+	
+		
 
 	private:
 
-		Win32Window*          m_Window;
-		CommandQueue          m_CommandQueue;
+		static Win32Window*                           m_noptrWindow;
+		static std::unique_ptr<CommandQueue>          m_CommandQueue;
+
 		
 
 

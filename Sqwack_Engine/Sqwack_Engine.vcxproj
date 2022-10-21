@@ -203,6 +203,10 @@
       </SubType>
     </ClCompile>
     <ClCompile Include="Sqwack\src\Platform\D3D12\D3D12LogAssertion.cpp" />
+    <ClCompile Include="Sqwack\src\Platform\D3D12\D3D12Renderer.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="Sqwack\src\Platform\D3D12\Device.cpp" />
     <ClCompile Include="Sqwack\src\Platform\D3D12\Fence.cpp">
       <SubType>
