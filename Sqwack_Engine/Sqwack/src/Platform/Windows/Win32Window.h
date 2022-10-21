@@ -14,13 +14,16 @@
 #pragma once
 #include "Win32Utils.h"
 #include "Sqwack/Core/Window.h"
-#include "Platform/D3D12/SwapChain.h"
 #include "Platform/D3D12/D3D12Context.h"
+#include "Platform/D3D12/SwapChain.h"
+
 
 
 
 
 namespace Sqwack {
+	
+	
 
 	class SQWACK_API Win32Window: public Window
 
@@ -45,14 +48,18 @@ namespace Sqwack {
 		virtual void Fullscreen() override;
 
 
+
+		inline SwapChain* GetSwapChain() { return &m_SwapChain; }
+
 		void ProcessMessage(MSG &msg);
 
 	protected:
 
 	private:
 
-		SwapChain                             m_SwapChain;
+		
 		std::unique_ptr<D3D12Context>         m_D3D12Context;
+		SwapChain                             m_SwapChain;
 
 	private: 
 

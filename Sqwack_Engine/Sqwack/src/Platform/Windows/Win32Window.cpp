@@ -30,7 +30,8 @@ namespace Sqwack {
 		m_Height(specs.windowHeight),
 		m_VSync(specs.vsync),
 		m_FullScreen(specs.fullscreen),
-		m_HWND(nullptr)
+		m_HWND(nullptr),
+		m_SwapChain(DXGI_SWAP_CHAIN_DESC{})
 	{
 		m_WindowPtr = this;
 
@@ -83,8 +84,33 @@ namespace Sqwack {
 		m_D3D12Context->Init();
 
 		//Create and initialize the swap chain
+		DXGI_SWAP_CHAIN_DESC scDesc{};
+		DXGI_MODE_DESC       bufferDesc{};
 
-		/*m_SwapChain = */
+		bufferDesc.Width = m_Width;
+		bufferDesc.Height = m_Height;
+		bufferDesc.RefreshRate.Numerator = 60;
+		bufferDesc.RefreshRate.Denominator = 1;
+		bufferDesc.ScanlineOrdering = DXGI_MODE_SCANLINE_ORDER_UNSPECIFIED;
+		bufferDesc.Scaling = DXGI_MODE_SCALING_UNSPECIFIED;
+		bufferDesc.Format = DXGI_FORMAT_B8G8R8A8_UNORM;
+
+		scDesc.BufferCount = 2;
+		scDesc.BufferDesc = bufferDesc;
+		scDesc.Windowed = !m_Specification.fullscreen;
+		//TODO: 4xMSAA check and support
+		scDesc.SampleDesc =  { 1, 0 };
+		scDesc.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
+		scDesc.OutputWindow = m_HWND;
+		scDesc.SwapEffect = DXGI_SWAP_EFFECT_DISCARD;
+		
+
+		//Query for Tearing support in the context object
+		scDesc.Flags = DXGI_SWAP_CHAIN_FLAG_ALLOW_TEARING;
+		/*bufferDesc.RefreshRate = m_D3D12Context*/
+		
+		m_SwapChain.Init(scDesc, m_D3D12Context->GetFactory4());
+
 	}
 
 

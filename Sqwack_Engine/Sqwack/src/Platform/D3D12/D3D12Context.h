@@ -24,6 +24,10 @@ namespace Sqwack
 		D3D12Context();
 		~D3D12Context();
 
+		inline Microsoft::WRL::ComPtr<IDXGIFactory4> GetFactory4() const { return m_dxgiFactory4; }
+
+
+
 		void Init();
 		
 

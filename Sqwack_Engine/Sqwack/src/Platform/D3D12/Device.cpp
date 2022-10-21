@@ -68,6 +68,7 @@ namespace Sqwack
 	void Device::CreateDevice(Microsoft::WRL::ComPtr<IDXGIAdapter4> adapter4)
 	{
 #ifdef	SQWACK_DEBUG
+
 		//Enable DX12 debug layer
 		EnableDebugLayer();
 

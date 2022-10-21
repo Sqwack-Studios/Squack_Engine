@@ -158,6 +158,10 @@
     </ClInclude>
     <ClInclude Include="Sqwack\src\Platform\D3D12\D3D12Headers.h" />
     <ClInclude Include="Sqwack\src\Platform\D3D12\D3D12LogAssertion.h" />
+    <ClInclude Include="Sqwack\src\Platform\D3D12\D3D12Renderer.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="Sqwack\src\Platform\D3D12\D3D12RendererAPI.h" />
     <ClInclude Include="Sqwack\src\Platform\D3D12\Device.h" />
     <ClInclude Include="Sqwack\src\Platform\D3D12\Fence.h">
@@ -201,6 +205,10 @@
     <ClCompile Include="Sqwack\src\Platform\D3D12\D3D12LogAssertion.cpp" />
     <ClCompile Include="Sqwack\src\Platform\D3D12\Device.cpp" />
     <ClCompile Include="Sqwack\src\Platform\D3D12\Fence.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="Sqwack\src\Platform\D3D12\SwapChain.cpp">
       <SubType>
       </SubType>
     </ClCompile>

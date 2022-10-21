@@ -13,16 +13,35 @@
 
 #pragma once
 #include "Fence.h"
-#include "Platform/Windows/Win32Window.h"
+#include "D3D12Headers.h"
 
 namespace Sqwack 
 {
 	class SwapChain
 	{
+	public:
+
+		
+		SwapChain(const DXGI_SWAP_CHAIN_DESC& desc);
+		~SwapChain();
+
+		
+		SwapChain() = delete;
+		SwapChain& operator= (const SwapChain& swapChain) = delete;
+		SwapChain(const SwapChain& swapchain) = delete;
+		
+
+
+
+		void Init(const DXGI_SWAP_CHAIN_DESC& desc, Microsoft::WRL::ComPtr<IDXGIFactory4> factory4);
+
+
 	private:
 
 		Microsoft::WRL::ComPtr<IDXGIFactory4>          m_Factory4;
 		Fence                                          m_Fence;
+
+		DXGI_SWAP_CHAIN_DESC                           m_SwapChainDesc;
 
 
 	};
