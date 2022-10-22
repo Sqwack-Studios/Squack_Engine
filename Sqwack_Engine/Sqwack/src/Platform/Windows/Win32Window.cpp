@@ -17,7 +17,7 @@
 
 #pragma once
 #include "Win32Window.h"
-#include "Platform/D3D12/D3D12Renderer.h"
+
 
 
 
@@ -32,7 +32,7 @@ namespace Sqwack {
 		m_VSync(specs.vsync),
 		m_FullScreen(specs.fullscreen),
 		m_HWND(nullptr),
-		m_SwapChain(DXGI_SWAP_CHAIN_DESC{})
+		m_SwapChain()
 	{
 		m_SelfWindowPtr = this;
 
@@ -94,7 +94,7 @@ namespace Sqwack {
 		bufferDesc.RefreshRate.Denominator = 1;
 		bufferDesc.ScanlineOrdering = DXGI_MODE_SCANLINE_ORDER_UNSPECIFIED;
 		bufferDesc.Scaling = DXGI_MODE_SCALING_UNSPECIFIED;
-		bufferDesc.Format = DXGI_FORMAT_B8G8R8A8_UNORM;
+		bufferDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
 
 		scDesc.BufferCount = 2;
 		scDesc.BufferDesc = bufferDesc;
@@ -103,16 +103,19 @@ namespace Sqwack {
 		scDesc.SampleDesc =  { 1, 0 };
 		scDesc.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
 		scDesc.OutputWindow = m_HWND;
-		scDesc.SwapEffect = DXGI_SWAP_EFFECT_DISCARD;
+		scDesc.SwapEffect = DXGI_SWAP_EFFECT_FLIP_DISCARD;
 		
 
 		//Query for Tearing support in the context object
 		scDesc.Flags = DXGI_SWAP_CHAIN_FLAG_ALLOW_TEARING;
 		/*bufferDesc.RefreshRate = m_D3D12Context*/
 		
-		m_SwapChain.Init(scDesc, m_D3D12Context->GetFactory4());
+		m_SwapChain.Init(m_D3D12Context->GetFactory4(), GetID3D12DeviceFromContext());
+		m_SwapChain.CreateSwapChain(m_D3D12Context->GetFactory4(), GetID3D12DeviceFromContext(), scDesc);
 
-		D3D12Renderer::Init();
+		
+
+		/*D3D12Renderer::Init();*/
 
 	}
 

@@ -49,11 +49,10 @@ namespace Sqwack
 
 
 		Microsoft::WRL::ComPtr<ID3D12Device>				m_ID3DDevice;
+		Microsoft::WRL::ComPtr<ID3D12Debug>	                m_debugController;
 
 
-		UINT												m_RtvDescriptorSize;
-		UINT												m_DsvDescriptorSize;
-		UINT												m_CbvSrvDescriptorSize;
+
 
 
 

@@ -27,12 +27,17 @@
 #include <functional>
 #include <assert.h>
 
-#include "Sqwack/Core/Core.h"
-
-
-
 
 #include "Platform/Windows/Win32Headers.h"
+
+
+#include "Sqwack/Core/Core.h"
+#include "Sqwack/Core/Window.h"
+
+
+
+
+
 
 
 

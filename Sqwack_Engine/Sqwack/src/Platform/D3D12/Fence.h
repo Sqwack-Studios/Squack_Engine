@@ -12,7 +12,6 @@
 #define _Sqwack_Engine_Fence_H_
 
 #pragma once
-#include "Sqwack/Core/Core.h"
 #include "D3D12Headers.h"
 
 namespace Sqwack
@@ -36,7 +35,6 @@ namespace Sqwack
 		_UINT64                                               m_FenceValue;
 		HANDLE                                                m_StallEvent;
 
-		friend class SwapChain;
 
 		//Fence initial value is 0 by default.
 		//Not supported custom initial values by now

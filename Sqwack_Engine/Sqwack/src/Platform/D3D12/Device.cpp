@@ -21,10 +21,10 @@ namespace Sqwack
 {
 
 	Device::Device() :
-		m_ID3DDevice(nullptr),
-		m_RtvDescriptorSize(0),
-		m_DsvDescriptorSize(0),
-		m_CbvSrvDescriptorSize(0)
+		m_ID3DDevice(nullptr)
+		//m_RtvDescriptorSize(0),
+		//m_DsvDescriptorSize(0),
+		//m_CbvSrvDescriptorSize(0)
 	{
 
 	}
@@ -51,11 +51,11 @@ namespace Sqwack
 
 	bool Device::EnableDebugLayer()
 	{
-		Microsoft::WRL::ComPtr<ID3D12Debug>	debugController;
+		
 
-		DXCall(HRESULT hr_ = D3D12GetDebugInterface(IID_PPV_ARGS(&debugController)), hr_);
+		DXCall(HRESULT hr_ = D3D12GetDebugInterface(IID_PPV_ARGS(&m_debugController)), hr_);
 
-		debugController->EnableDebugLayer();
+		m_debugController->EnableDebugLayer();
 
 		return SUCCEEDED(hr_);
 	}
@@ -67,12 +67,12 @@ namespace Sqwack
 
 	void Device::CreateDevice(Microsoft::WRL::ComPtr<IDXGIAdapter4> adapter4)
 	{
-#ifdef	SQWACK_DEBUG
+
 
 		//Enable DX12 debug layer
 		EnableDebugLayer();
 
-#endif
+
 
 		auto dxgiAdapter4{ adapter4 };
 

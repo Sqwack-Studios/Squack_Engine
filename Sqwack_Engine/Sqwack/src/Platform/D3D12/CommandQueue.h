@@ -25,7 +25,13 @@ namespace Sqwack
 
 		static std::unique_ptr<CommandQueue> Create();
 		void Init(Microsoft::WRL::ComPtr<ID3D12Device> device, const _UINT8& bufferCount);
-		void InitCommandListBuffer();
+	
+		inline Microsoft::WRL::ComPtr<ID3D12CommandQueue>  GetID3DCommandQueue() const { return m_ID3DCommandQueue; }
+		inline CommandList* GetCommandList(const _UINT8 &indexBuffer) { return m_CommandListBuffer[indexBuffer].get(); }
+
+	public:
+
+		
 
 	private:
 		Microsoft::WRL::ComPtr<ID3D12CommandQueue>              m_ID3DCommandQueue;
@@ -35,7 +41,7 @@ namespace Sqwack
 
 		//The command list is buffer MUST REMAIN FIXED BY THE AMOUNT OF BACK BUFFERS. THIS AMOUNT IS SPECIFIED BY THE SWAP CHAIN
 		std::vector<std::unique_ptr<CommandList>>               m_CommandListBuffer;
-		_UINT8                                                  m_SwapChainBufferCount;
+
 	};
 
 

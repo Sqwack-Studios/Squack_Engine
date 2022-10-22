@@ -163,6 +163,10 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="Sqwack\src\Platform\D3D12\D3D12RendererAPI.h" />
+    <ClInclude Include="Sqwack\src\Platform\D3D12\Descriptor.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="Sqwack\src\Platform\D3D12\Device.h" />
     <ClInclude Include="Sqwack\src\Platform\D3D12\Fence.h">
       <SubType>
@@ -204,6 +208,10 @@
     </ClCompile>
     <ClCompile Include="Sqwack\src\Platform\D3D12\D3D12LogAssertion.cpp" />
     <ClCompile Include="Sqwack\src\Platform\D3D12\D3D12Renderer.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="Sqwack\src\Platform\D3D12\Descriptor.cpp">
       <SubType>
       </SubType>
     </ClCompile>

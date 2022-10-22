@@ -30,7 +30,8 @@ bool DXLogCall(HRESULT hr_, const char* function, const char* file, int line)
 		std::string_view _file{ file };
 		
 
-		std::cout << "[DirectX 12 Assertion]  " << _func << " failed in " << _file << " ; line " << line << " ; error: " << error.ErrorMessage() << std::endl;
+		std::cout << "[DirectX 12 Assertion]  " << _func << " failed in " << _file << " ; line " << line << " ; error: ";
+		std::wcout << error.ErrorMessage() << std::endl;
 		return false;
 	}
 	return true;

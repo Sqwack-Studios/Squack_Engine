@@ -96,6 +96,7 @@
     <ClInclude Include="Sqwack\src\Platform\D3D12\CommandList.h" />
     <ClInclude Include="Sqwack\src\Platform\D3D12\D3D12Context.h" />
     <ClInclude Include="Sqwack\src\Platform\D3D12\D3D12Renderer.h" />
+    <ClInclude Include="Sqwack\src\Platform\D3D12\Descriptor.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sqwack\src\Platform\D3D12\Adapter.cpp">
@@ -122,5 +123,6 @@
     <ClCompile Include="Sqwack\src\Platform\D3D12\D3D12Context.cpp" />
     <ClCompile Include="Sqwack\src\Platform\D3D12\SwapChain.cpp" />
     <ClCompile Include="Sqwack\src\Platform\D3D12\D3D12Renderer.cpp" />
+    <ClCompile Include="Sqwack\src\Platform\D3D12\Descriptor.cpp" />
   </ItemGroup>
 </Project>

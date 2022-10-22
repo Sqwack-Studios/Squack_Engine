@@ -18,6 +18,9 @@
 
 namespace Sqwack {
 
+
+
+
 	struct ApplicationSpecification
 	{
 		std::string       appName{"Sqwack Engine"};

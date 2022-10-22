@@ -31,7 +31,7 @@ namespace Sqwack
 		void Init();
 		
 
-		static D3D12Context* Create();
+		static std::unique_ptr<D3D12Context> Create();
 
 		inline Microsoft::WRL::ComPtr<ID3D12Device> GetDevice() const { return m_Device->GetDevice(); }
 

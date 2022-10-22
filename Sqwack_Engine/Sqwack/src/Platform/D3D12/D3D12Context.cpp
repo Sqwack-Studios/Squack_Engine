@@ -32,9 +32,9 @@ namespace Sqwack
 
 	}
 
-	D3D12Context* D3D12Context::Create()
+	std::unique_ptr<D3D12Context> D3D12Context::Create()
 	{
-		return new D3D12Context();
+		return std::make_unique<D3D12Context> ();
 	}
 
 	void D3D12Context::Init()
@@ -55,7 +55,7 @@ namespace Sqwack
 
 	void D3D12Context::CreateFactory()
 	{
-		DXCall(HRESULT hr_ = CreateDXGIFactory1(IID_PPV_ARGS(&m_dxgiFactory4)), hr_);
+		DXCall(HRESULT hr_ = CreateDXGIFactory2(DXGI_CREATE_FACTORY_DEBUG, IID_PPV_ARGS(&m_dxgiFactory4)), hr_);
 	}
 }
 

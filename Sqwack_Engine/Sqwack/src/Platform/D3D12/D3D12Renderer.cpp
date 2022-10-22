@@ -15,26 +15,25 @@
 
 #pragma once
 #include "D3D12Renderer.h"
+#include "D3D12LogAssertion.h"
 
 namespace Sqwack
 {
-	Win32Window* D3D12Renderer::m_noptrWindow{ nullptr };
-	std::unique_ptr<CommandQueue> D3D12Renderer::m_CommandQueue{ nullptr };
+
+
 
 	void D3D12Renderer::Init()
 	{
 		//communicate the swap chain with the queues
 		// we need the device in order to create the queues
 		
-		//Obtain a reference to the window containing the swap chain
-		m_noptrWindow = Win32Window::m_SelfWindowPtr;
 		
-		//Create and start the command queue
-		m_CommandQueue = CommandQueue::Create();
-		m_CommandQueue->Init(m_noptrWindow->GetID3D12DeviceFromContext(), m_noptrWindow->GetSwapChainBufferCount());
+		//Obtain a reference to the window containing the swap chain
 
-		//track the resource heaps and views
 
+		
+		//load resources, compile shaders...? 
+		
 	}
 }
 

@@ -14,6 +14,7 @@
 #pragma once
 #include "Sqwack/Core/Specifications.h"
 
+
 namespace Sqwack {
 
 	class Window
@@ -41,7 +42,7 @@ namespace Sqwack {
 		static Window* Create(const WindowSpecification& specs);
 
 
-		static const _UINT8         m_SwapChainBufferCount{ 2 };
+		static constexpr _UINT8         BackBufferCount{ 2 };
 
 	protected:
 

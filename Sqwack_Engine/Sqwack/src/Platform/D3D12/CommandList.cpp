@@ -34,6 +34,8 @@ namespace Sqwack
 		return std::make_unique<CommandList>();
 	}
 
+	
+
 	void CommandList::Init(Microsoft::WRL::ComPtr<ID3D12Device> device)
 	{
 		Microsoft::WRL::ComPtr<ID3D12Device> id3dDevice{ device };
@@ -46,9 +48,20 @@ namespace Sqwack
 
 		DXCall(HRESULT hr_2 = id3dDevice->CreateCommandList(0, D3D12_COMMAND_LIST_TYPE_DIRECT, m_ID3DCommandAlloc.Get(), nullptr, IID_PPV_ARGS(m_ID3DCommandList.GetAddressOf())), hr_2);
 
-		//Close the Command List ASAP because we will need to Reset(). The command list must be closed before reseting
+		//¡¡Close the Command List ASAP because we will need to Reset(). The command list must be closed before reseting!!
+		
+	}
+
+	void CommandList::TransitionResource(Microsoft::WRL::ComPtr<ID3D12Resource> resource, const D3D12_RESOURCE_STATES& fromState, const D3D12_RESOURCE_STATES& toState)
+	{
+		m_ID3DCommandList->ResourceBarrier(1, &CD3DX12_RESOURCE_BARRIER::Transition(resource.Get(), fromState, toState));
+	}
+
+	void CommandList::Close()
+	{
 		m_ID3DCommandList->Close();
 	}
+	
 }
 
 

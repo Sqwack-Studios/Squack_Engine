@@ -19,8 +19,7 @@
 
 namespace Sqwack
 {
-	class CommandQueue;
-	class CommandList;
+
 
 	class D3D12Renderer
 	{
@@ -34,8 +33,8 @@ namespace Sqwack
 
 	private:
 
-		static Win32Window*                           m_noptrWindow;
-		static std::unique_ptr<CommandQueue>          m_CommandQueue;
+
+		
 
 		
 

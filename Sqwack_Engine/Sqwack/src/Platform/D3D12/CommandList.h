@@ -26,7 +26,10 @@ namespace Sqwack
 
 		static std::unique_ptr<CommandList> Create();
 
+		void TransitionResource(Microsoft::WRL::ComPtr<ID3D12Resource> resource, const D3D12_RESOURCE_STATES& fromState, const D3D12_RESOURCE_STATES& toState);
+
 		void Init(Microsoft::WRL::ComPtr<ID3D12Device> device);
+		void Close();
 
 	private:
 

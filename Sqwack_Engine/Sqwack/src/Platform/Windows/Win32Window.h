@@ -21,6 +21,7 @@
 
 
 
+
 namespace Sqwack {
 	
 	
@@ -48,27 +49,31 @@ namespace Sqwack {
 		virtual void Fullscreen() override;
 
 
+		inline SwapChain* GetSwapChain() { return &m_SwapChain; }
+		inline static Win32Window* GetWin32WindowPointer() { return m_SelfWindowPtr; }
+
+	
+
 
 		
 
 		void ProcessMessage(MSG &msg);
 
-	protected:
-
-	private:
-		friend class D3D12Renderer;
+	public:
 
 		
-		std::unique_ptr<D3D12Context>         m_D3D12Context;
-		SwapChain                             m_SwapChain;
 
-		_UINT8                                m_CurrentBackBuffer;
-		_UINT8                                m_SwapChainBufferCount;
+	private:
+		
 
-		inline SwapChain* GetSwapChain() { return &m_SwapChain; }
+		
+		std::unique_ptr<D3D12Context>                m_D3D12Context;
+		      
+		SwapChain                                    m_SwapChain;
+		
+		
 
-		inline _UINT8 GetCurrentBackBufferNumber() const { return m_CurrentBackBuffer; }
-		inline _UINT8 GetSwapChainBufferCount() const { return m_SwapChainBufferCount; }
+	
 		
 		inline Microsoft::WRL::ComPtr<ID3D12Device> GetID3D12DeviceFromContext() const { return m_D3D12Context->GetDevice(); }
 
@@ -99,6 +104,8 @@ namespace Sqwack {
 		std::wstring				         m_WindowClass;
 		std::wstring				         m_WindowTitle;
 		//HICON						         m_hIcon;
+
+	
 		static Win32Window*                  m_SelfWindowPtr;
 
 	private:
