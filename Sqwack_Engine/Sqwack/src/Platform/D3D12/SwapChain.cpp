@@ -84,7 +84,7 @@ namespace Sqwack
 		dsvDesc.DepthOrArraySize = 1;
 		dsvDesc.MipLevels = 1;
 		dsvDesc.Format = DXGI_FORMAT_D24_UNORM_S8_UINT;
-		dsvDesc.SampleDesc.Count = 1; //TODO: MSAA support
+		dsvDesc.SampleDesc.Count = 1; 
 		dsvDesc.SampleDesc.Quality = 0;
 		dsvDesc.Layout = D3D12_TEXTURE_LAYOUT_UNKNOWN;
 		dsvDesc.Flags = D3D12_RESOURCE_FLAG_ALLOW_DEPTH_STENCIL;

@@ -99,7 +99,6 @@ namespace Sqwack {
 		scDesc.BufferCount = 2;
 		scDesc.BufferDesc = bufferDesc;
 		scDesc.Windowed = !m_Specification.fullscreen;
-		//TODO: 4xMSAA check and support
 		scDesc.SampleDesc =  { 1, 0 };
 		scDesc.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
 		scDesc.OutputWindow = m_HWND;
@@ -148,7 +147,7 @@ namespace Sqwack {
 		wcex.hCursor = LoadCursor(nullptr, IDC_ARROW);
 		wcex.hbrBackground = (HBRUSH) (COLOR_WINDOW + 1);
 
-		//TODO: App icons
+		
 		
 		wcex.hIcon = LoadIcon(NULL, IDI_QUESTION);
 		wcex.hIconSm = LoadIcon(NULL, IDI_QUESTION);

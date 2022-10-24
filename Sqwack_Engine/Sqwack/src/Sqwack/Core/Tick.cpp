@@ -28,7 +28,7 @@ namespace Sqwack
 
 		switch (platform)
 		{
-		case Sqwack::WINDOWS:
+		case TICK_PLATFORM::WINDOWS:
 			m_AppTimer = std::make_unique<Win32Timer>();
 			break;
 		default:
@@ -47,7 +47,7 @@ namespace Sqwack
 
 #endif // SQWACK_PLATFORM_WINDOWS
 
-
+//else, implement std::chrono timer class
 		
 	}
 
