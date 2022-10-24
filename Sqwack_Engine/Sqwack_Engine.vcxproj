@@ -143,40 +143,21 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Sqwack\TODOS.h" />
     <ClInclude Include="Sqwack\src\Platform\D3D12\Adapter.h" />
-    <ClInclude Include="Sqwack\src\Platform\D3D12\CommandList.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="Sqwack\src\Platform\D3D12\CommandQueue.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="Sqwack\src\Platform\D3D12\D3D12Context.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
+    <ClInclude Include="Sqwack\src\Platform\D3D12\CommandList.h" />
+    <ClInclude Include="Sqwack\src\Platform\D3D12\CommandQueue.h" />
+    <ClInclude Include="Sqwack\src\Platform\D3D12\D3D12Context.h" />
     <ClInclude Include="Sqwack\src\Platform\D3D12\D3D12Headers.h" />
     <ClInclude Include="Sqwack\src\Platform\D3D12\D3D12LogAssertion.h" />
-    <ClInclude Include="Sqwack\src\Platform\D3D12\D3D12Renderer.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
+    <ClInclude Include="Sqwack\src\Platform\D3D12\D3D12Renderer.h" />
     <ClInclude Include="Sqwack\src\Platform\D3D12\D3D12RendererAPI.h" />
-    <ClInclude Include="Sqwack\src\Platform\D3D12\Descriptor.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
+    <ClInclude Include="Sqwack\src\Platform\D3D12\Descriptor.h" />
     <ClInclude Include="Sqwack\src\Platform\D3D12\Device.h" />
-    <ClInclude Include="Sqwack\src\Platform\D3D12\Fence.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="Sqwack\src\Platform\D3D12\SwapChain.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
+    <ClInclude Include="Sqwack\src\Platform\D3D12\Fence.h" />
+    <ClInclude Include="Sqwack\src\Platform\D3D12\SwapChain.h" />
     <ClInclude Include="Sqwack\src\Platform\Windows\Win32Headers.h" />
+    <ClInclude Include="Sqwack\src\Platform\Windows\Win32Timer.h" />
     <ClInclude Include="Sqwack\src\Platform\Windows\Win32Utils.h" />
     <ClInclude Include="Sqwack\src\Platform\Windows\Win32Window.h" />
     <ClInclude Include="Sqwack\src\Sqwack.h" />
@@ -185,6 +166,8 @@
     <ClInclude Include="Sqwack\src\Sqwack\Core\Core.h" />
     <ClInclude Include="Sqwack\src\Sqwack\Core\EntryPoint.h" />
     <ClInclude Include="Sqwack\src\Sqwack\Core\Specifications.h" />
+    <ClInclude Include="Sqwack\src\Sqwack\Core\Tick.h" />
+    <ClInclude Include="Sqwack\src\Sqwack\Core\Timer.h" />
     <ClInclude Include="Sqwack\src\Sqwack\Core\Window.h" />
     <ClInclude Include="Sqwack\src\Sqwack\Renderer\GraphicalContext.h" />
     <ClInclude Include="Sqwack\src\Sqwack\Renderer\Renderer.h" />
@@ -194,38 +177,19 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sqwack\src\Platform\D3D12\Adapter.cpp" />
-    <ClCompile Include="Sqwack\src\Platform\D3D12\CommandList.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="Sqwack\src\Platform\D3D12\CommandQueue.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="Sqwack\src\Platform\D3D12\D3D12Context.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
+    <ClCompile Include="Sqwack\src\Platform\D3D12\CommandList.cpp" />
+    <ClCompile Include="Sqwack\src\Platform\D3D12\CommandQueue.cpp" />
+    <ClCompile Include="Sqwack\src\Platform\D3D12\D3D12Context.cpp" />
     <ClCompile Include="Sqwack\src\Platform\D3D12\D3D12LogAssertion.cpp" />
-    <ClCompile Include="Sqwack\src\Platform\D3D12\D3D12Renderer.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="Sqwack\src\Platform\D3D12\Descriptor.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
+    <ClCompile Include="Sqwack\src\Platform\D3D12\D3D12Renderer.cpp" />
+    <ClCompile Include="Sqwack\src\Platform\D3D12\Descriptor.cpp" />
     <ClCompile Include="Sqwack\src\Platform\D3D12\Device.cpp" />
-    <ClCompile Include="Sqwack\src\Platform\D3D12\Fence.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="Sqwack\src\Platform\D3D12\SwapChain.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
+    <ClCompile Include="Sqwack\src\Platform\D3D12\Fence.cpp" />
+    <ClCompile Include="Sqwack\src\Platform\D3D12\SwapChain.cpp" />
+    <ClCompile Include="Sqwack\src\Platform\Windows\Win32Timer.cpp" />
     <ClCompile Include="Sqwack\src\Platform\Windows\Win32Window.cpp" />
     <ClCompile Include="Sqwack\src\Sqwack\Core\App.cpp" />
+    <ClCompile Include="Sqwack\src\Sqwack\Core\Tick.cpp" />
     <ClCompile Include="Sqwack\src\pch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>

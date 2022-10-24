@@ -31,6 +31,7 @@ namespace Sqwack {
 		bool              windowDecorated{ true }; //remove borders. //if fullscreen is active, it will override this option
 		bool              resizable{ true };
 		bool              startMaximized{ false };
+		_UINT16            targetFPS{ 120 };
 	};
 
 	struct WindowSpecification

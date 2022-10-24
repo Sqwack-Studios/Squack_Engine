@@ -16,6 +16,7 @@
 #include "Sqwack/Core/Core.h"
 #include "Sqwack/Core/Specifications.h"
 #include "Sqwack/Core/Window.h"
+#include "Tick.h"
 
 
 
@@ -37,6 +38,7 @@ namespace Sqwack {
 	private:
 
 		std::unique_ptr<Window>                 m_Window;
+		std::unique_ptr<Tick>                   m_Tick;
 		ApplicationSpecification                m_Specification;
 
 	protected:

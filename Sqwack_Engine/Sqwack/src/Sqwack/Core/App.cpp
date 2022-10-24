@@ -24,11 +24,15 @@ namespace Sqwack {
 
 
 	App::App(const ApplicationSpecification& specs):
-		m_Specification(specs)
+		m_Specification(specs),
+		m_Window(nullptr),
+		m_Tick(nullptr)
 	{
 		//initialize the window
 		m_Window = std::unique_ptr<Window>(Window::Create(WindowSpecification()));
 		m_Window->Init();
+
+		m_Tick = std::unique_ptr<Tick>(Tick::Create(specs.targetFPS));
 	}
 
 
