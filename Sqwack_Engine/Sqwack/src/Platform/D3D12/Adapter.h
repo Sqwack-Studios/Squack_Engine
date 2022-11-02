@@ -29,7 +29,8 @@ namespace Sqwack
 	{
 	public:
 
-
+		static Microsoft::WRL::ComPtr<IDXGIAdapter4> QueryBestAdapter(Microsoft::WRL::ComPtr<IDXGIFactory4> factory4);
+		static std::unique_ptr<Adapter> Create(Microsoft::WRL::ComPtr<IDXGIAdapter4>);
 
 	public:
 		Adapter(Microsoft::WRL::ComPtr<IDXGIAdapter4> adapter);
@@ -40,8 +41,6 @@ namespace Sqwack
 
 		void Init();
 
-		static Microsoft::WRL::ComPtr<IDXGIAdapter4> QueryBestAdapter(Microsoft::WRL::ComPtr<IDXGIFactory4> factory4);
-		static std::unique_ptr<Adapter> Create(Microsoft::WRL::ComPtr<IDXGIAdapter4>);
 
 		inline Microsoft::WRL::ComPtr<IDXGIAdapter4> GetDXGIAdapter() const { return m_dxgiAdapter; }
 		inline const std::vector<DisplayDescs>& GetAdapterDisplayDescs() { return m_outputsDescs; }

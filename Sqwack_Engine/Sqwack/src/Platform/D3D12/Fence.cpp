@@ -22,6 +22,7 @@ namespace Sqwack
 		m_FenceValue(0),
 		m_ID3DFence(NULL),
 		m_StallEvent(NULL)
+		
 	{
 
 	}

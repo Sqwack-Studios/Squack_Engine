@@ -49,6 +49,7 @@ namespace Sqwack
 		DXCall(HRESULT hr_2 = id3dDevice->CreateCommandList(0, D3D12_COMMAND_LIST_TYPE_DIRECT, m_ID3DCommandAlloc.Get(), nullptr, IID_PPV_ARGS(m_ID3DCommandList.GetAddressOf())), hr_2);
 
 		//¡¡Close the Command List ASAP because we will need to Reset(). The command list must be closed before reseting!!
+		Close();
 		
 	}
 

@@ -99,7 +99,7 @@ project "Sandbox"
 
 		filter "system:windows"
 
-		staticruntime "on"
+		staticruntime "on"1
 		systemversion "latest"
 
 		defines
